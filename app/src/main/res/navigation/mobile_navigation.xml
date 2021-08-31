@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_all_dishes">
+
+    <fragment
+        android:id="@+id/navigation_all_dishes"
+        android:name="com.ramapitecusment.favdish.view.fragment.AllDishesFragment"
+        android:label="@string/title_all_dishes"
+        tools:layout="@layout/fragment_all_dishes">
+        <action
+            android:id="@+id/actionDishDetails"
+            app:destination="@id/dishDetailsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/navigation_all_dishes"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_favourite_dishes"
+        android:name="com.ramapitecusment.favdish.view.fragment.FavouriteDishesFragment"
+        android:label="@string/title_favourite_dishes"
+        tools:layout="@layout/fragment_favourite_dishes">
+        <action
+            android:id="@+id/actionFavoriteDishDetails"
+            app:destination="@id/dishDetailsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/navigation_favourite_dishes"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_random_dish"
+        android:name="com.ramapitecusment.favdish.view.fragment.RandomDishFragmentFragment"
+        android:label="@string/title_random_dish"
+        tools:layout="@layout/fragment_random_dish">
+        <action
+            android:id="@+id/actionRandomDishDetails"
+            app:destination="@id/dishDetailsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/navigation_random_dish"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/dishDetailsFragment"
+        android:name="com.ramapitecusment.favdish.view.fragment.DishDetailsFragment"
+        android:label="@string/title_dish_details"
+        tools:layout="@layout/fragment_dish_details">
+        <argument
+            android:name="dish"
+            app:argType="com.ramapitecusment.favdish.repository.database.FavDish" />
+    </fragment>
+</navigation>

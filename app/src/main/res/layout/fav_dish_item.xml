@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="dish"
+            type="com.ramapitecusment.favdish.repository.database.FavDish" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:cardElevation="@dimen/_5sdp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/iv_fav_dish"
+                    bindImage="@{dish.image}"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_120sdp"
+                    android:layout_margin="@dimen/_1sdp"
+                    android:contentDescription="@string/image_of_dish"
+                    android:scaleType="fitXY"
+                    tools:src="@drawable/ic_broken_image" />
+
+                <ImageButton
+                    android:id="@+id/ib_more"
+                    style="?attr/selectableItemBackgroundBorderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/more_action"
+                    android:src="@drawable/ic_more"
+                    android:visibility="gone" />
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:gravity="center_vertical"
+                android:text="@{dish.title}"
+                android:textColor="@color/grey_900"
+                android:textSize="@dimen/_15sdp"
+                android:textStyle="bold"
+                tools:text="Dish title" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>
